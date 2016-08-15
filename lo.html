@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+			
+			var localStorage = window.localStorage;
+			
+			if(localStorage){
+				
+				localStorage.setItem('name','kdj');
+				localStorage['age'] = '28';
+			}
+			
+			var score = 40;
+			var bestscore = 30;
+			if(localStorage['bscore']){
+				if(score > bestscore){
+				bestscore = score;
+				localStorage['bscore'] = bestscore;
+			}else{
+				bestscore = localStorage['bscore'];
+			}
+			}else{
+				localStorage['bscore'] = bestscore;
+			}
+			
+			console.log(localStorage.name)
+			
+		</script>
+	</body>
+</html>
